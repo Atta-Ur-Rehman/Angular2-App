@@ -1,0 +1,29 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular 2</title>
+    <!--Style-->
+    <link rel="stylesheet" href="node_modukes/semantic-ui/dist/themes/semantic.min.css">
+    <!---->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script>
+        System.config({
+            packages:{
+                app:{
+                format : 'register',
+                defaultExtension : 'js'
+            }
+            }
+        })
+        System.import('app/importfiles')
+    </script>
+</head>
+<body>
+    <atta>
+    </atta>
+</body>
+</html>
