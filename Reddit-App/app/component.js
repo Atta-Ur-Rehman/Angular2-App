@@ -19,6 +19,9 @@ System.register(['angular2/core'], function(exports_1) {
             check = (function () {
                 //name : Array<string> ;
                 function check() {
+                    this.vote = 0;
+                    this.title = "Angular 2";
+                    this.link = "angular.com";
                     //  this.name = ["Pakistan","Lahore","Karachi"];
                 }
                 check.prototype.addArticle = function (a, b) {
@@ -26,14 +29,24 @@ System.register(['angular2/core'], function(exports_1) {
                     //alert(userTitle);
                     //alert(a:${a.value});
                     alert("a:" + a.value);
-                    a.value = " ";
+                    a.value = "";
+                };
+                check.prototype.voteUp = function () {
+                    //debugger;
+                    this.vote += 1;
+                    //        alert(this.vote)
+                };
+                check.prototype.voteDown = function () {
+                    //  debugger;
+                    this.vote -= 1;
+                    //      alert(this.vote);
                 };
                 check = __decorate([
                     core_1.Component({
                         selector: 'atta'
                     }),
                     core_1.View({
-                        template: "\n    <div style=\"padding:20px;\">\n        <form class=\"ui large form segment\" style=\"width:600px;height:300px;background:#ECFFFB;\">\n            <h3 class=\"ui header\">Add a Link</h3>\n                <div class=\"field\">\n                    <label for=\"title\">Title:</label>\n                    <input name=\"title\" #newtitle>\n                </div>\n                <div class=\"field\">\n                    <label for=\"link\">Link:</label>\n                    <input name=\"link\" #newlink>\n                </div>\n                <button (click)=\"addArticle(newtitle ,newlink)\" class=\"ui positive left floated button\">\n                    Submit link\n                </button>\n        </form>\n    </div>\n    "
+                        template: "\n    <div style=\"padding:20px;\">\n        <form class=\"ui large form segment\" style=\"width:600px;height:300px;background:#ECFFFB;\">\n            <h3 class=\"ui header\">Add a Link</h3>\n                <div class=\"field\">\n                    <label for=\"title\">Title:</label>\n                    <input name=\"title\" #newtitle>\n                </div>\n                <div class=\"field\">\n                    <label for=\"link\">Link:</label>\n                    <input name=\"link\" #newlink>\n                </div>\n                <button (click)=\"addArticle(newtitle ,newlink)\" class=\"ui positive left floated button\">\n                    Submit link\n                </button>\n        </form>\n    </div>\n    \n    <div class=\"four wide column center aligned votes\">\n        <div class=\"ui statistic\">\n            <div class=\"value\">\n                {{vote}}\n            </div>\n            <div class=\"label\">\n                Points\n            </div>\n        </div>\n    </div>\n    <div class=\"twelve wide column\">\n        <a class=\"ui large header\" href=\"{{ link }}\">\n            {{title}}\n        </a>\n        <ul class=\"ui big horizontal list voters\">\n            <li class=\"item\">\n                <span (click)=\"voteUp()\">\n                    <i class=\"arrow up icon\" ></i>\n                    upvote\n                </span>    \n            </li>\n            <li class=\"item\">\n                <span (click)=\"voteDown()\">\n                    <i class=\"arrow down icon\" ></i>\n                    downvote\n                </span>\n            </li>\n        </ul>\n    </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], check);
