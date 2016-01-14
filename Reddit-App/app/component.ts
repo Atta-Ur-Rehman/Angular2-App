@@ -21,36 +21,40 @@ import {Component , View} from 'angular2/core'
                     Submit link
                 </button>
         </form>
-    </div>
-    
-    <div class="four wide column center aligned votes">
-        <div class="ui statistic">
-            <div class="value">
-                {{vote}}
-            </div>
-            <div class="label">
-                Points
+        <td>
+        <div class="four wide column center aligned votes">
+            <div class="ui statistic" style="width: 87px;height: 85px; border-radius: 7%;background-color: rgba(128, 128, 128, 0.3);">
+                <div class="value">
+                    {{vote}}
+                </div>
+                <div class="label">
+                    Points
+                </div>
             </div>
         </div>
-    </div>
-    <div class="twelve wide column">
-        <a class="ui large header" href="{{ link }}">
-            {{title}}
-        </a>
-        <ul class="ui big horizontal list voters">
-            <li class="item">
-                <span (click)="voteUp()">
-                    <i class="arrow up icon" ></i>
-                    upvote
-                </span>    
-            </li>
-            <li class="item">
-                <span (click)="voteDown()">
-                    <i class="arrow down icon" ></i>
-                    downvote
-                </span>
-            </li>
-        </ul>
+        </td>
+        <td>
+        <div class="twelve wide column">
+            <a class="ui large header" href="{{ link }}">
+                {{title}}
+            </a>
+
+            <ul class="ui big horizontal list voters" >
+                <li class="item">
+                    <a href="#"(click)="voteUp()">
+                        <i class="arrow up icon" ></i>
+                        upvote
+                    </a>    
+                </li>
+                <li class="item">
+                    <a href="#" (click)="voteDown()">
+                        <i class="arrow down icon" ></i>
+                        downvote
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </td>
     </div>
     `
 })
